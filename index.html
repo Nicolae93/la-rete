@@ -4,360 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LA RETE · Orestea — Regolamento</title>
+<meta name="description" content="Regolamento de La Rete · Orestea: gioco di fiducia, bluff e giudizio per 8 giocatori, 45-60 minuti, senza narratore.">
+<meta name="color-scheme" content="dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400;1,6..96,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --notte:#17111A;
-  --notte-2:#1F1724;
-  --notte-3:#281E2D;
-  --bone:#EDE3D2;
-  --bone-dim:#AFA391;
-  --sangue:#9E1B2F;
-  --sangue-vivo:#C33044;
-  --brass:#C2963C;
-  --alloro:#7E9060;
-  --terracotta:#C4703C;
-
-  --display:"Bodoni Moda","Didot","Bodoni MT",Georgia,serif;
-  --body:"EB Garamond","Iowan Old Style",Georgia,serif;
-  --util:"Barlow Condensed","Oswald","Helvetica Neue",sans-serif;
-
-  --measure:64rem;
-  --gap:clamp(3.5rem,7vw,7rem);
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--notte);
-  color:var(--bone);
-  font-family:var(--body);
-  font-size:clamp(1.02rem,0.55vw + 0.9rem,1.16rem);
-  line-height:1.62;
-  -webkit-font-smoothing:antialiased;
-}
-body::before{
-  content:"";
-  position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.5'/></svg>");
-  opacity:.05; mix-blend-mode:overlay;
-}
-body::after{
-  content:"";
-  position:fixed; inset:0; z-index:0; pointer-events:none;
-  background:radial-gradient(120% 70% at 50% -10%, rgba(194,150,60,.10), transparent 60%),
-             radial-gradient(90% 60% at 50% 110%, rgba(158,27,47,.12), transparent 60%);
-}
-.wrap{position:relative; z-index:1}
-.col{max-width:var(--measure); margin:0 auto; padding:0 clamp(1.25rem,5vw,3rem)}
-
-/* ---------- tipografia di base ---------- */
-p{margin:0 0 1.1em}
-strong{font-weight:500; color:#fff}
-em{font-style:italic}
-a{color:var(--brass)}
-
-.eyebrow{
-  font-family:var(--util);
-  text-transform:uppercase;
-  letter-spacing:.28em;
-  font-size:.76rem;
-  color:var(--bone-dim);
-}
-
-/* ---------- hero ---------- */
-.hero{
-  min-height:96svh;
-  display:flex; flex-direction:column; justify-content:center;
-  padding:clamp(3rem,9vh,7rem) 0 clamp(2rem,6vh,4rem);
-  position:relative;
-}
-.hero__key{height:14px; width:100%; opacity:.55}
-.hero__title{
-  font-family:var(--display);
-  font-weight:500;
-  font-size:clamp(4.2rem,20vw,13rem);
-  line-height:.82;
-  letter-spacing:-.02em;
-  margin:clamp(1.5rem,4vw,3rem) 0 0;
-  color:var(--bone);
-  text-shadow:0 0 60px rgba(158,27,47,.35);
-}
-.hero__title span{display:block; text-indent:.06em}
-.hero__title .b{color:var(--sangue-vivo); font-style:italic; font-weight:400}
-.hero__sub{
-  font-family:var(--display);
-  font-style:italic;
-  font-size:clamp(1.2rem,2.6vw,1.8rem);
-  color:var(--brass);
-  margin:1.6rem 0 .4rem;
-}
-.hero__meta{
-  font-family:var(--util); text-transform:uppercase; letter-spacing:.22em;
-  font-size:.82rem; color:var(--bone-dim); margin-top:1.6rem;
-}
-.hero__thesis{
-  margin-top:clamp(2.5rem,6vw,4.5rem);
-  border-left:2px solid var(--sangue);
-  padding-left:1.4rem;
-  max-width:40ch;
-  font-family:var(--display);
-  font-size:clamp(1.15rem,2vw,1.45rem);
-  line-height:1.4;
-}
-.hero__thesis small{
-  display:block; margin-top:.9rem;
-  font-family:var(--util); font-size:.8rem; letter-spacing:.2em;
-  text-transform:uppercase; color:var(--bone-dim);
-}
-
-/* ---------- indice ---------- */
-.index{
-  border-top:1px solid rgba(237,227,210,.18);
-  border-bottom:1px solid rgba(237,227,210,.18);
-  padding:clamp(2rem,5vw,3.5rem) 0;
-  margin:var(--gap) 0;
-}
-.index__grid{
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
-  gap:.15rem 2rem; margin-top:1.6rem;
-}
-.index__grid a{
-  display:flex; align-items:baseline; gap:.7rem;
-  padding:.42rem 0; text-decoration:none; color:var(--bone);
-  border-bottom:1px solid rgba(237,227,210,.08);
-  transition:color .2s, padding-left .2s;
-}
-.index__grid a:hover{color:var(--brass); padding-left:.35rem}
-.index__grid .n{font-family:var(--display); color:var(--sangue-vivo); font-size:.95rem; min-width:2.2em}
-
-/* ---------- sezioni ---------- */
-section{padding:var(--gap) 0; position:relative}
-.sec__head{display:flex; align-items:baseline; gap:1rem; margin-bottom:.6rem}
-.sec__num{
-  font-family:var(--display); font-size:clamp(1.6rem,4vw,2.4rem);
-  color:var(--sangue-vivo); line-height:1;
-}
-h2{
-  font-family:var(--display); font-weight:500;
-  font-size:clamp(2.1rem,6vw,3.6rem); line-height:1.02;
-  margin:0 0 1.4rem; letter-spacing:-.015em;
-}
-h3{
-  font-family:var(--util); text-transform:uppercase; letter-spacing:.2em;
-  font-size:.92rem; color:var(--brass); font-weight:600;
-  margin:2.6rem 0 .9rem;
-}
-.lede{
-  font-family:var(--display); font-size:clamp(1.15rem,2.2vw,1.5rem);
-  line-height:1.45; color:var(--bone); max-width:34ch; margin-bottom:2rem;
-}
-.rule{border:0; border-top:1px solid rgba(237,227,210,.15); margin:2.6rem 0}
-
-/* ---------- epigrafe: elemento firma ---------- */
-.epigrafe{
-  position:relative;
-  margin:var(--gap) 0;
-  padding:clamp(2.4rem,5vw,3.6rem) 0;
-  border-top:1px solid rgba(194,150,60,.35);
-  border-bottom:1px solid rgba(194,150,60,.35);
-  text-align:center;
-  opacity:0; transform:translateY(18px);
-  transition:opacity .9s ease, transform .9s ease;
-}
-.epigrafe.on{opacity:1; transform:none}
-.epigrafe q{
-  font-family:var(--display); font-style:italic; font-weight:400;
-  font-size:clamp(1.6rem,5.2vw,3.1rem); line-height:1.14;
-  quotes:none; display:block; max-width:22ch; margin:0 auto;
-  color:var(--bone);
-}
-.epigrafe q .hot{color:var(--sangue-vivo)}
-.epigrafe q .gold{color:var(--brass)}
-.epigrafe figcaption{
-  font-family:var(--util); text-transform:uppercase; letter-spacing:.3em;
-  font-size:.72rem; color:var(--bone-dim); margin-top:1.6rem;
-}
-
-/* ---------- fazioni ---------- */
-.fazioni{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1rem,3vw,2.5rem)}
-.fazione{
-  padding:1.6rem; border:1px solid rgba(237,227,210,.16);
-  background:linear-gradient(180deg, rgba(255,255,255,.03), transparent);
-}
-.fazione h4{
-  font-family:var(--display); font-size:1.5rem; margin:.2rem 0 .2rem; font-weight:500;
-}
-.fazione .goal{font-size:.95rem; color:var(--bone-dim); margin-bottom:1rem}
-.fazione ul{list-style:none; margin:0; padding:0}
-.fazione li{
-  padding:.42rem 0; border-bottom:1px dashed rgba(237,227,210,.14);
-  font-family:var(--util); font-size:1.05rem; letter-spacing:.06em; text-transform:uppercase;
-}
-.fazione li:last-child{border-bottom:0}
-.atreo{border-top:3px solid var(--brass)}
-.atreo h4{color:var(--brass)}
-.rete{border-top:3px solid var(--sangue)}
-.rete h4{color:var(--sangue-vivo)}
-
-/* ---------- carte personaggio ---------- */
-.roster{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; background:rgba(237,227,210,.14); border:1px solid rgba(237,227,210,.14)}
-.pg{position:relative; background:var(--notte); padding:1.5rem 1.4rem 1.6rem; overflow:hidden}
-.pg__initial{
-  position:absolute; right:-.12em; bottom:-.34em;
-  font-family:var(--display); font-size:8rem; line-height:1;
-  color:var(--terracotta); opacity:.13; pointer-events:none;
-}
-.pg__name{font-family:var(--display); font-size:1.45rem; font-weight:500; margin:0 0 .1rem}
-.pg__tag{
-  font-family:var(--util); text-transform:uppercase; letter-spacing:.18em;
-  font-size:.7rem; color:var(--bone-dim); display:block; margin-bottom:.8rem;
-}
-.pg p{margin:0; font-size:.98rem; position:relative}
-.pg--atreo{border-left:3px solid var(--brass)}
-.pg--rete{border-left:3px solid var(--sangue)}
-
-/* ---------- tavole ---------- */
-.tavola{width:100%; border-collapse:collapse; margin:1.2rem 0 1.6rem; font-size:.98rem}
-.tavola caption{
-  font-family:var(--util); text-transform:uppercase; letter-spacing:.22em;
-  font-size:.74rem; color:var(--bone-dim); text-align:left; padding-bottom:.7rem;
-}
-.tavola th{
-  font-family:var(--util); text-transform:uppercase; letter-spacing:.16em;
-  font-size:.74rem; font-weight:600; color:var(--brass); text-align:left;
-  padding:.5rem .8rem .5rem 0; border-bottom:1px solid rgba(194,150,60,.4);
-}
-.tavola td{padding:.72rem .8rem .72rem 0; border-bottom:1px solid rgba(237,227,210,.12); vertical-align:top}
-.tavola td:first-child{white-space:nowrap; font-family:var(--util); font-size:1.02rem; letter-spacing:.05em}
-.tavola .soglia{color:var(--brass); font-family:var(--display); font-size:1.3rem}
-
-/* ---------- passi numerati ---------- */
-.passi{list-style:none; counter-reset:p; margin:1rem 0 0; padding:0}
-.passi li{counter-increment:p; position:relative; padding:0 0 1.2rem 3.2rem; margin-bottom:.2rem}
-.passi li::before{
-  content:counter(p);
-  position:absolute; left:0; top:-.15rem;
-  font-family:var(--display); font-size:1.7rem; color:var(--sangue-vivo);
-}
-.passi strong{display:block; font-family:var(--util); text-transform:uppercase; letter-spacing:.16em; font-size:.82rem; color:var(--brass); font-weight:600; margin-bottom:.2rem}
-
-/* ---------- note e riquadri ---------- */
-.nota{
-  border-left:2px solid var(--brass);
-  padding:.2rem 0 .2rem 1.3rem; margin:1.8rem 0;
-  color:var(--bone-dim); font-size:.98rem;
-}
-.nota b{color:var(--bone); font-weight:500}
-
-.manto{
-  position:relative;
-  background:linear-gradient(180deg, rgba(158,27,47,.16), rgba(158,27,47,.04));
-  border-left:6px solid var(--sangue);
-  padding:1.5rem 1.5rem 1.2rem; margin:2rem 0;
-}
-.manto h4{
-  font-family:var(--display); font-style:italic; font-size:1.35rem; margin:0 0 .5rem; font-weight:500;
-}
-
-.buio{
-  background:#0E0A11; border:1px solid rgba(237,227,210,.14);
-  padding:1.6rem; margin:1.6rem 0; text-align:center;
-}
-.buio p{
-  font-family:var(--display); font-style:italic; font-size:1.05rem;
-  color:var(--bone-dim); max-width:46ch; margin:0 auto;
-}
-.buio .lab{
-  font-family:var(--util); text-transform:uppercase; letter-spacing:.3em;
-  font-size:.7rem; color:var(--sangue-vivo); display:block; margin-bottom:.9rem;
-}
-
-/* ---------- fasi ---------- */
-.fasi{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1rem,3vw,2rem); margin-top:1.5rem}
-.fase{padding:1.5rem; border:1px solid rgba(237,227,210,.16)}
-.fase h4{font-family:var(--display); font-size:1.6rem; margin:.1rem 0 .8rem; font-weight:500}
-.fase--i{background:linear-gradient(180deg, rgba(194,150,60,.08), transparent)}
-.fase--i h4{color:var(--brass)}
-.fase--ii{background:linear-gradient(180deg, rgba(158,27,47,.12), transparent)}
-.fase--ii h4{color:var(--sangue-vivo)}
-.fase ul{margin:.4rem 0 0; padding-left:1.1rem}
-.fase li{margin-bottom:.35rem}
-
-/* ---------- vittorie ---------- */
-.vittorie{display:grid; gap:1px; background:rgba(237,227,210,.14); border:1px solid rgba(237,227,210,.14)}
-.vit{background:var(--notte); padding:1.2rem 1.3rem; display:grid; grid-template-columns:minmax(120px,1fr) 2fr; gap:.4rem 1.5rem; align-items:baseline}
-.vit__t{font-family:var(--display); font-size:1.3rem; color:var(--brass)}
-.vit__t.red{color:var(--sangue-vivo)}
-.vit__c{font-size:.98rem}
-.vit__c small{display:block; font-family:var(--util); text-transform:uppercase; letter-spacing:.16em; font-size:.7rem; color:var(--bone-dim); margin-bottom:.25rem}
-
-/* ---------- criteri d'onore ---------- */
-.criteri{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.2rem; margin:1.5rem 0}
-.crit{border-top:2px solid var(--alloro); padding-top:1rem}
-.crit h4{font-family:var(--display); font-size:1.5rem; margin:0 0 .3rem; font-weight:500; color:var(--alloro)}
-.crit p{font-style:italic; font-size:1rem; margin:0}
-
-/* ---------- il quaderno (playtest) ---------- */
-.quaderno{
-  background:var(--bone); color:#2A2029;
-  padding:clamp(2rem,5vw,3.2rem) clamp(1.4rem,4vw,3rem);
-  margin:var(--gap) 0 0;
-}
-.quaderno h2{color:#2A2029}
-.quaderno .sec__num{color:var(--sangue)}
-.quaderno .eyebrow{color:#7A6E63}
-.quaderno h3{color:var(--sangue)}
-.quaderno .lede{color:#4A3D46}
-.quaderno ul{list-style:none; padding:0; margin:0}
-.quaderno ul li{
-  padding:.55rem 0 .55rem 1.9rem; border-bottom:1px solid rgba(42,32,41,.13);
-  position:relative;
-}
-.quaderno ul li::before{
-  content:"□"; position:absolute; left:0; top:.5rem; color:var(--sangue); font-size:1.05rem;
-}
-.se{display:grid; grid-template-columns:1fr; gap:.1rem; margin-top:1rem}
-.se__row{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; padding:.8rem 0; border-bottom:1px solid rgba(42,32,41,.13)}
-.se__q{font-family:var(--util); text-transform:uppercase; letter-spacing:.08em; font-size:.95rem; color:#4A3D46}
-.se__a{font-weight:500}
-.materiali{columns:2; column-gap:2.5rem; margin-top:1rem}
-.materiali li{break-inside:avoid}
-
-/* ---------- chiusura ---------- */
-.finale{
-  text-align:center; padding:calc(var(--gap) * 1.2) 0 var(--gap);
-}
-.finale p{
-  font-family:var(--display); font-style:italic;
-  font-size:clamp(1.4rem,4vw,2.4rem); line-height:1.25; max-width:20ch; margin:0 auto 1.5rem;
-}
-.finale small{font-family:var(--util); text-transform:uppercase; letter-spacing:.3em; font-size:.72rem; color:var(--bone-dim)}
-
-@media (max-width:720px){
-  .fazioni, .fasi{grid-template-columns:1fr}
-  .vit{grid-template-columns:1fr}
-  .materiali{columns:1}
-  .se__row{grid-template-columns:1fr; gap:.2rem}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .epigrafe{opacity:1; transform:none; transition:none}
-}
-a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outline-offset:3px}
-
-@media print{
-  body{background:#fff; color:#000}
-  body::before, body::after{display:none}
-  .hero{min-height:auto}
-  .epigrafe{opacity:1; transform:none; break-inside:avoid}
-  h2, .epigrafe, .pg, .fase{break-inside:avoid}
-  .quaderno{background:#fff}
-}
-</style>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -366,9 +19,11 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 <header class="hero">
   <div class="col">
     <svg class="hero__key" viewBox="0 0 400 14" preserveAspectRatio="none" aria-hidden="true">
-      <pattern id="key" width="40" height="14" patternUnits="userSpaceOnUse">
-        <path d="M0 13 H36 V3 H8 V10 H28 V6" fill="none" stroke="#C2963C" stroke-width="1.6"/>
-      </pattern>
+      <defs>
+        <pattern id="key" width="40" height="14" patternUnits="userSpaceOnUse">
+          <path d="M0 13 H36 V3 H8 V10 H28 V6" fill="none" stroke="#C2963C" stroke-width="1.6"/>
+        </pattern>
+      </defs>
       <rect width="400" height="14" fill="url(#key)"/>
     </svg>
 
@@ -376,10 +31,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
     <p class="hero__sub">Orestea — gioco di fiducia, bluff e giudizio</p>
     <p class="hero__meta">8 giocatori · 45–60 minuti · nessun narratore, solo un timer · v1.0</p>
 
-    <div class="hero__thesis">
+    <p class="hero__thesis">
       Tutto avviene alla luce. Gli assassinî sono visti da tutti, i Timé sono pubblici, i pugnali si forgiano davanti al tavolo. Il segreto non sta mai in cosa succede: sta in <em>chi sei</em> e in <em>chi è caduto</em>.
       <small>Il principio</small>
-    </div>
+    </p>
   </div>
 </header>
 
@@ -405,17 +60,19 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
   </div>
 </nav>
 
+<main>
+
 <!-- ============ 1 ============ -->
-<section id="s1">
+<section id="s1" aria-labelledby="s1-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Α΄</span><span class="eyebrow">Le squadre</span></div>
-    <h2>Otto persone,<br>due verità</h2>
+    <h2 id="s1-titolo">Otto persone,<br>due verità</h2>
     <p class="lede">Il buio scende una volta sola all'inizio, per i riconoscimenti, e una seconda volta per il Dono della regina. Tutto il resto si gioca a occhi aperti.</p>
 
     <div class="fazioni">
       <div class="fazione atreo">
         <p class="eyebrow">Fazione</p>
-        <h4>⚔ Casa di Atreo</h4>
+        <h3 class="fazione__name"><span aria-hidden="true">⚔</span> Casa di Atreo</h3>
         <p class="goal">Vince se muore Clitennestra, per mano di chiunque.</p>
         <ul>
           <li>Agamennone</li><li>Oreste</li><li>Elettra</li><li>Il Coro</li>
@@ -423,7 +80,7 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
       </div>
       <div class="fazione rete">
         <p class="eyebrow">Fazione</p>
-        <h4>✹ La Rete</h4>
+        <h3 class="fazione__name"><span aria-hidden="true">✹</span> La Rete</h3>
         <p class="goal">Vince se muoiono Agamennone e Oreste.</p>
         <ul>
           <li>Clitennestra</li><li>Egisto</li><li>Le Erinni</li><li>Crisotemide</li>
@@ -439,57 +96,57 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 2 ============ -->
-<section id="s2">
+<section id="s2" aria-labelledby="s2-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Β΄</span><span class="eyebrow">I poteri</span></div>
-    <h2>Chi sei,<br>e cosa puoi fare</h2>
+    <h2 id="s2-titolo">Chi sei,<br>e cosa puoi fare</h2>
 
     <div class="roster">
       <article class="pg pg--atreo">
         <span class="pg__initial" aria-hidden="true">Α</span>
-        <h3 class="pg__name" style="color:var(--bone)">Agamennone</h3>
+        <h3 class="pg__name">Agamennone</h3>
         <span class="pg__tag">Il re scoperto</span>
         <p>Scoperto dall'inizio. Assegna i 3 Timé d'apertura a tre giocatori diversi. Siede in ogni tribunale. Non possiede mai Timé, non uccide mai. All'ottavo round arma pubblicamente un campione.</p>
       </article>
       <article class="pg pg--atreo">
         <span class="pg__initial" aria-hidden="true">Ο</span>
-        <h3 class="pg__name" style="color:var(--bone)">Oreste</h3>
+        <h3 class="pg__name">Oreste</h3>
         <span class="pg__tag">La Vendetta</span>
         <p>Dalla morte di Agamennone in poi, in qualsiasi momento, si rivela e colpisce un giocatore. Gratis, senza pugnale, una volta sola. Non può essere parata e non può parare.</p>
       </article>
       <article class="pg pg--atreo">
         <span class="pg__initial" aria-hidden="true">Η</span>
-        <h3 class="pg__name" style="color:var(--bone)">Elettra</h3>
+        <h3 class="pg__name">Elettra</h3>
         <span class="pg__tag">Il Volto</span>
         <p>Quando viene ispezionata, mostra il ruolo che vuole: vero o falso.</p>
       </article>
       <article class="pg pg--atreo">
         <span class="pg__initial" aria-hidden="true">Χ</span>
-        <h3 class="pg__name" style="color:var(--bone)">Il Coro</h3>
+        <h3 class="pg__name">Il Coro</h3>
         <span class="pg__tag">La voce del popolo</span>
         <p>Non può essere ucciso finché Agamennone è vivo. Se il re muore, eredita il suo seggio permanente nel tribunale. Assegna la Corona d'Alloro nel Giudizio.</p>
       </article>
       <article class="pg pg--rete">
         <span class="pg__initial" aria-hidden="true">Κ</span>
-        <h3 class="pg__name" style="color:var(--bone)">Clitennestra</h3>
+        <h3 class="pg__name">Clitennestra</h3>
         <span class="pg__tag">La regina · il Dono</span>
         <p>Conosce Egisto. All'ottavo round, nel buio, dona un pugnale a chi vuole.</p>
       </article>
       <article class="pg pg--rete">
         <span class="pg__initial" aria-hidden="true">Αἴ</span>
-        <h3 class="pg__name" style="color:var(--bone)">Egisto</h3>
+        <h3 class="pg__name">Egisto</h3>
         <span class="pg__tag">L'amante</span>
         <p>Conosce Clitennestra. Nessun altro potere: la sua forza è sapere, dall'inizio, di non essere solo.</p>
       </article>
       <article class="pg pg--rete">
         <span class="pg__initial" aria-hidden="true">Ε</span>
-        <h3 class="pg__name" style="color:var(--bone)">Le Erinni</h3>
+        <h3 class="pg__name">Le Erinni</h3>
         <span class="pg__tag">L'Accusa</span>
         <p>Nel Giudizio, escludono un giocatore dalla Corona.</p>
       </article>
       <article class="pg pg--rete">
         <span class="pg__initial" aria-hidden="true">Χρ</span>
-        <h3 class="pg__name" style="color:var(--bone)">Crisotemide</h3>
+        <h3 class="pg__name">Crisotemide</h3>
         <span class="pg__tag">Il Volto Chino</span>
         <p>Identico al potere di Elettra: mostra il ruolo che vuole, vero o falso.</p>
       </article>
@@ -509,10 +166,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 3 ============ -->
-<section id="s3">
+<section id="s3" aria-labelledby="s3-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Γ΄</span><span class="eyebrow">Il setup</span></div>
-    <h2>Quaranta secondi<br>di buio</h2>
+    <h2 id="s3-titolo">Quaranta secondi<br>di buio</h2>
 
     <ol class="passi">
       <li><strong>Le carte</strong>Si distribuiscono le 8 carte personaggio. Chi ha l'Asso la gira subito: è Agamennone, e resta scoperto per tutta la partita.</li>
@@ -535,15 +192,15 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 4 ============ -->
-<section id="s4">
+<section id="s4" aria-labelledby="s4-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Δ΄</span><span class="eyebrow">Il Timé</span></div>
-    <h2>L'onore è pubblico.<br>Per questo pesa.</h2>
+    <h2 id="s4-titolo">L'onore è pubblico.<br>Per questo pesa.</h2>
     <p class="lede">Il Timé sta sempre davanti a te, sul tavolo. Le soglie sono automatiche: scattano da sé, non sono una scelta.</p>
 
     <table class="tavola">
       <caption>Fase I — finché Agamennone vive</caption>
-      <thead><tr><th>Timé</th><th>Effetto</th></tr></thead>
+      <thead><tr><th scope="col">Timé</th><th scope="col">Effetto</th></tr></thead>
       <tbody>
         <tr><td class="soglia">1</td><td>Diventi eleggibile come Assessore</td></tr>
         <tr><td class="soglia">2</td><td>Ispezione: guardi la carta di un giocatore a tua scelta</td></tr>
@@ -553,7 +210,7 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 
     <table class="tavola">
       <caption>Fase II — dalla morte di Agamennone</caption>
-      <thead><tr><th>Timé</th><th>Effetto</th></tr></thead>
+      <thead><tr><th scope="col">Timé</th><th scope="col">Effetto</th></tr></thead>
       <tbody>
         <tr><td class="soglia">1</td><td>Ispezione immediata</td></tr>
         <tr><td class="soglia">2</td><td>I due gettoni tornano nel pool e ricevi un Pugnale</td></tr>
@@ -579,10 +236,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 5 ============ -->
-<section id="s5">
+<section id="s5" aria-labelledby="s5-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Ε΄</span><span class="eyebrow">Il round</span></div>
-    <h2>Il governo<br>è un rito</h2>
+    <h2 id="s5-titolo">Il governo<br>è un rito</h2>
 
     <ol class="passi">
       <li><strong>Lo Scettro</strong>Passa in senso orario; il primo Presidente si sorteggia. Il Presidente nomina un Assessore, che non può essere il Presidente del round precedente. In Fase I l'Assessore deve avere almeno 1 Timé; in Fase II no.</li>
@@ -593,7 +250,7 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 
     <h3>Il tribunale quando il re non c'è più</h3>
     <table class="tavola">
-      <thead><tr><th>Chi siede</th><th>Voti necessari</th></tr></thead>
+      <thead><tr><th scope="col">Chi siede</th><th scope="col">Voti necessari</th></tr></thead>
       <tbody>
         <tr><td>Presidente, Assessore, Agamennone</td><td>2 su 3</td></tr>
         <tr><td>Presidente, Assessore, Coro</td><td>2 su 3 — dopo la morte del re</td></tr>
@@ -610,10 +267,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 6 ============ -->
-<section id="s6">
+<section id="s6" aria-labelledby="s6-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Ϝ΄</span><span class="eyebrow">Il colpo</span></div>
-    <h2>Tutti vedono chi ha colpito.<br>Nessuno vede chi è caduto.</h2>
+    <h2 id="s6-titolo">Tutti vedono chi ha colpito.<br>Nessuno vede chi è caduto.</h2>
 
     <p>Chi possiede un pugnale può alzarsi e colpire in qualsiasi momento, anche a metà conclave. Usare il pugnale non costa nulla: il prezzo è stato pagato alla forgiatura. Se possiedi un pugnale puoi consumarlo per parare un colpo diretto a te: si consumano entrambe le armi. <strong>La Vendetta di Oreste non può essere parata e non può parare.</strong></p>
 
@@ -622,13 +279,13 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
     </div>
 
     <div class="manto">
-      <h4>La scommessa cieca</h4>
+      <h3 class="manto__title">La scommessa cieca</h3>
       <p>La vittima riceve il Manto Rosso ed esce dal gioco con la carta coperta. Ti sei esposto come assassino davanti a otto persone senza sapere se hai colpito un nemico o un tuo alleato. E il tavolo non può nemmeno assolverti, perché non sa cosa hai fatto. Al Giudizio scoprirai se quella sera hai ucciso tua sorella.</p>
     </div>
 
     <h3>Le carte che si girano</h3>
     <table class="tavola">
-      <thead><tr><th>Chi</th><th>Quando</th></tr></thead>
+      <thead><tr><th scope="col">Chi</th><th scope="col">Quando</th></tr></thead>
       <tbody>
         <tr><td>Agamennone</td><td>È già scoperto. La sua morte è pubblica per forza e apre la Fase II</td></tr>
         <tr><td>Clitennestra</td><td>Si rivela cadendo: chiude la partita</td></tr>
@@ -649,10 +306,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 7 ============ -->
-<section id="s7">
+<section id="s7" aria-labelledby="s7-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Ζ΄</span><span class="eyebrow">L'ottavo round</span></div>
-    <h2>Il Doppio Dono</h2>
+    <h2 id="s7-titolo">Il Doppio Dono</h2>
     <p class="lede">Il momento che rompe lo stallo. Due pugnali entrano in gioco insieme: uno alla luce, uno dal buio.</p>
 
     <h3>A · Il Campione del Re</h3>
@@ -664,7 +321,7 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
     <h3>B · Il Dono</h3>
     <p>Si mette una carta pugnale al centro e parte un timer da 30 secondi. Tutti chiudono gli occhi. Clitennestra si alza in silenzio e posa la carta davanti a un giocatore qualsiasi. Al beep, tutti riaprono. Tutti vedono a chi è andato il ferro. Nessuno ha visto chi l'ha posato, ma tutti sanno che è stata la regina.</p>
     <div class="manto">
-      <h4>Il dilemma della regina</h4>
+      <h4 class="manto__title">Il dilemma della regina</h4>
       <p>Se lo dà a Egisto, gli mette addosso il sospetto di mezzo tavolo. Se lo dà a un nemico per seminare zizzania, gli mette in mano un'arma vera. Se non si alza, la carta resta al centro e tutti sanno che ha rinunciato.</p>
     </div>
     <div class="nota"><b>Ritmo.</b> Se al playtest il tavolo arriva morto all'ottavo round, anticipa il Doppio Dono al sesto: è la leva di ritmo più efficace che hai.</div>
@@ -677,29 +334,29 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 8 ============ -->
-<section id="s8">
+<section id="s8" aria-labelledby="s8-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Η΄</span><span class="eyebrow">Le fasi</span></div>
-    <h2>Prima e dopo<br>il regicidio</h2>
+    <h2 id="s8-titolo">Prima e dopo<br>il regicidio</h2>
 
     <div class="fasi">
       <div class="fase fase--i">
         <p class="eyebrow">Fase I</p>
-        <h4>Il Ritorno</h4>
+        <h3 class="fase__name">Il Ritorno</h3>
         <p>Round normali, dal primo fino alla morte di Agamennone.</p>
         <ul><li>Pugnale: 3 Timé</li><li>Ispezione: 2 Timé</li><li>Assessore: almeno 1 Timé</li></ul>
       </div>
       <div class="fase fase--ii">
         <p class="eyebrow">Fase II</p>
-        <h4>La Vendetta</h4>
+        <h3 class="fase__name">La Vendetta</h3>
         <p>Si apre con la morte del re. Da quel momento Oreste può rivelarsi e colpire quando vuole, senza pugnale e senza preavviso.</p>
         <ul><li>Pugnale: 2 Timé</li><li>Ispezione: 1 Timé</li><li>Assessore: chiunque</li></ul>
       </div>
     </div>
 
-    <table class="tavola" style="margin-top:2rem">
+    <table class="tavola tavola--spaziata">
       <caption>Oreste colpisce…</caption>
-      <thead><tr><th>Bersaglio</th><th>Esito</th></tr></thead>
+      <thead><tr><th scope="col">Bersaglio</th><th scope="col">Esito</th></tr></thead>
       <tbody>
         <tr><td>Clitennestra</td><td>La Rete è spezzata. Vince Casa di Atreo</td></tr>
         <tr><td>Chiunque altro</td><td>Quello muore, a carta coperta. Oreste è scoperto, ha perso la Vendetta ed è il bersaglio più esposto del tavolo</td></tr>
@@ -715,10 +372,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 9 ============ -->
-<section id="s9">
+<section id="s9" aria-labelledby="s9-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Θ΄</span><span class="eyebrow">Fine della partita</span></div>
-    <h2>Non c'è un tetto<br>di round</h2>
+    <h2 id="s9-titolo">Non c'è un tetto<br>di round</h2>
     <p>La partita finisce immediatamente quando muore Clitennestra — vince Casa di Atreo — oppure quando sono morti sia Agamennone sia Oreste — vince La Rete. Entrambe queste morti sono pubbliche per regola, quindi la condizione è sempre verificabile dal tavolo. Si gioca finché una delle due non scatta.</p>
     <div class="nota"><b>L'escalation.</b> Perché la partita non giri a vuoto, dal nono round in poi il conclave assegna 2 Timé invece di 1, sempre con lo stesso voto. Il ferro diventa inevitabile, e tutti lo sanno già mentre giocano il nono round.</div>
     <p><strong>Il Giudizio si tiene sempre</strong>, anche quando la fazione vincitrice è già decisa.</p>
@@ -726,10 +383,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </section>
 
 <!-- ============ 10 ============ -->
-<section id="s10">
+<section id="s10" aria-labelledby="s10-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">Ι΄</span><span class="eyebrow">Le vittorie</span></div>
-    <h2>Quattro modi<br>di vincere</h2>
+    <h2 id="s10-titolo">Quattro modi<br>di vincere</h2>
 
     <div class="vittorie">
       <div class="vit">
@@ -763,10 +420,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 11 ============ -->
-<section id="s11">
+<section id="s11" aria-labelledby="s11-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">ΙΑ΄</span><span class="eyebrow">Il Giudizio</span></div>
-    <h2>Tutte le carte<br>si girano</h2>
+    <h2 id="s11-titolo">Tutte le carte<br>si girano</h2>
     <p class="lede">E finalmente si scopre chi ha ucciso chi.</p>
 
     <ol class="passi">
@@ -778,9 +435,9 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 
     <h3>Il metro dell'onore</h3>
     <div class="criteri">
-      <div class="crit"><h4>Alétheia</h4><p>Ha mai detto una verità che gli è costata qualcosa?</p></div>
-      <div class="crit"><h4>Thémis</h4><p>Ha ucciso solo quando serviva?</p></div>
-      <div class="crit"><h4>Aidós</h4><p>Ha tradito chi si fidava di lui?</p></div>
+      <div class="crit"><h4 class="crit__name">Alétheia</h4><p>Ha mai detto una verità che gli è costata qualcosa?</p></div>
+      <div class="crit"><h4 class="crit__name">Thémis</h4><p>Ha ucciso solo quando serviva?</p></div>
+      <div class="crit"><h4 class="crit__name">Aidós</h4><p>Ha tradito chi si fidava di lui?</p></div>
     </div>
     <p>La Corona va a chi ha fatto lo stretto necessario — non a chi non ha fatto niente. Chi ha sferrato il colpo decisivo è un candidato pieno; chi non si è mai esposto non lo è affatto. Per incoronare, il Coro deve citare almeno due criteri su tre e almeno un atto concreto in cui il candidato ha pagato un prezzo.</p>
     <p>Il metro è la coerenza col proprio ruolo, non la virtù assoluta: la Rete deve tradire per vincere, e va giudicata su <em>come</em> ha tradito.</p>
@@ -793,10 +450,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </div></figure>
 
 <!-- ============ 12 ============ -->
-<section id="s12">
+<section id="s12" aria-labelledby="s12-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">ΙΒ΄</span><span class="eyebrow">Variante opzionale</span></div>
-    <h2>L'Urna</h2>
+    <h2 id="s12-titolo">L'Urna</h2>
     <p class="lede">Da provare solo se il tavolo si accorge di non avere alcun dato oggettivo su cui ragionare.</p>
     <p>Il conclave sceglie tre posti contigui e formula la domanda: «Quanti, tra i posti 3, 4 e 5, sono della Rete?». Un sacchetto opaco gira sotto il tavolo: chi siede in quei posti mette un gettone nero se è della Rete, bianco altrimenti; tutti gli altri mettono un gettone neutro. Si svuota al centro e si conta ad alta voce.</p>
     <p>Nessuno può mentire — è un meccanismo fisico. E nessuno viene bruciato: sai che tra tre persone ce n'è una della Rete, non quale.</p>
@@ -805,10 +462,10 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
 </section>
 
 <!-- ============ QUADERNO ============ -->
-<section id="s13" class="quaderno">
+<section id="s13" class="quaderno" aria-labelledby="s13-titolo">
   <div class="col">
     <div class="sec__head"><span class="sec__num">✧</span><span class="eyebrow">Fuori scena</span></div>
-    <h2>Il quaderno del primo playtest</h2>
+    <h2 id="s13-titolo">Il quaderno del primo playtest</h2>
     <p class="lede">Segnati questi numeri, bastano.</p>
     <ul>
       <li>In che round muore Agamennone</li>
@@ -842,6 +499,8 @@ a:focus-visible, [tabindex]:focus-visible{outline:2px solid var(--brass); outlin
     </ul>
   </div>
 </section>
+
+</main>
 
 <footer class="finale">
   <div class="col">
